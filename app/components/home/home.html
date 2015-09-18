@@ -1,0 +1,32 @@
+<h1>Howdy!</h1>
+
+<h2>
+  Gratz!
+</h2>
+
+<p>
+  Your deployment of Angular 2 Seed worked perfectly!
+  Click <em>about (above)</em> to get your reward!
+</p>
+
+<style>
+  google-chart {
+    height: 300px;
+    width: 400px;
+  }
+</style>
+
+<script>src="http://googlewebcomponents.github.io/google-chart/components/webcomponentsjs/webcomponents.min.js"</script>
+<link rel="import" href="http://googlewebcomponents.github.io/google-chart/components/google-chart/google-chart.html">
+
+<button (click)="refresh()">Refresh</button>
+
+<google-chart
+  [type]="t"
+  [options]="o"
+  [data]="d">
+</google-chart>
+
+Type: {{t}}<br/>
+Options: {{o | json}}<br/>
+Data: {{d}}<br/>

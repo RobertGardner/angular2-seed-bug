@@ -1,0 +1,27 @@
+<h1>Chart with Angular 2</h1>
+
+<style>
+  google-chart {
+    height: 300px;
+    width: 400px;
+  }
+</style>
+
+<script>src="http://googlewebcomponents.github.io/google-chart/components/webcomponentsjs/webcomponents.min.js"</script>
+<link rel="import" href="http://googlewebcomponents.github.io/google-chart/components/google-chart/google-chart.html">
+
+<hr/>
+<button (click)="refresh()">Refresh</button>
+<hr/>
+
+<google-chart
+  [type]="t"
+  [options]="o"
+  [data]="d">
+</google-chart>
+
+<p><hr/>
+Type: {{t}}<br/>
+Options: {{o | json}}<br/>
+Data: {{d}}<br/>
+<hr/>

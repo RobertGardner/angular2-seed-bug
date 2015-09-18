@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chart with Straight JS</title>
+</head>
+<body>
+<h1>Chart with Straight JS</h1>
+
+<style>
+  google-chart {
+    height: 300px;
+    width: 400px;
+  }
+</style>
+
+<script>src="http://googlewebcomponents.github.io/google-chart/components/webcomponentsjs/webcomponents.min.js"</script>
+<link rel="import" href="http://googlewebcomponents.github.io/google-chart/components/google-chart/google-chart.html">
+
+<hr/>
+<button onClick="refresh(m)">Refresh</button>
+<hr/>
+
+<google-chart id="chart"
+  type='pie'
+  options='{"title": "Distribution of days in 2001Q1"}'
+  data='[["Month", "Days"], ["Jan", 31], ["Feb", 28], ["Mar", 31]]'>
+</google-chart>
+
+<script>
+var m = document.getElementById("chart");
+var o = {
+      "region": "IT",
+      "displayMode": "markers",
+      "colorAxis": { "colors": ["green", "blue"] }
+    };
+var d = [
+      ["City", "Population", "Density"],
+      ["Rome", 3456789, 1285.31],
+      ["Milan", 1324110, 181.76],
+      ["Naples", 959574, 117.27],
+      ["Turin", 907563, 130.17],
+      ["Palermo", 655875, 158.9],
+      ["Genoa", 607906, 243.60],
+      ["Bologna", 380181, 140.7],
+      ["Florence", 371282, 102.41],
+      ["Fiumicino", 67370, 213.44],
+      ["Anzio", 52192, 43.43],
+      ["Ciampino", 38262, 11]
+    ];
+</script>
+
+<p><hr/>
+Element: <script>document.write(m)</script><br/>
+Options: <script>document.write(o)</script><br/>
+Data: <script>document.write(d)</script><br/>
+<hr/>
+
+<script>
+function refresh(m) {
+  m.type = "geo";
+  m.options = o;
+  m.data = d;
+}
+</script>
+
+</body>
+</html>
