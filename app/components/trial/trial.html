@@ -10,6 +10,15 @@
 <script>src="http://googlewebcomponents.github.io/google-chart/components/webcomponentsjs/webcomponents.min.js"</script>
 <link rel="import" href="http://googlewebcomponents.github.io/google-chart/components/google-chart/google-chart.html">
 
+<p>The Refresh button should change the chart from a pie chart to a geo chart.
+You can see from the data below that the parameters have changed, but the chart does not redraw.
+The exact same code is in the "Trial Instance 2" link. If you go there and click the Refresh button,
+the chart will redraw.</p>
+
+<p>Interestingly, if you start the app at Trial Instance 2, that one will not refresh, but if you click
+over to this one, it does refresh. So apparently the first instance to load has a problem, but
+subsequent instances work fine.</p>
+
 <hr/>
 <button (click)="refresh()">Refresh</button>
 <hr/>
